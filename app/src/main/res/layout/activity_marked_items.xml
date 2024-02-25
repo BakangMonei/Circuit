@@ -29,7 +29,7 @@
             android:id="@+id/welcomeText2"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Below is a list of purchased suitcase items"
+            android:text="Below is a list of purchased circuit items"
             android:textColor="#afb2bb"
             android:paddingLeft="20dp"
             android:fontFamily="@font/nunitoregular"

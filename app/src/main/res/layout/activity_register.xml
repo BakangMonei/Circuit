@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:text="Email Address"
+            android:text="Full Names"
             android:textSize="18dp"
             android:fontFamily="@font/nunitoregular"
             android:textColor="#b5b5bd"

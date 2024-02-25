@@ -1,26 +1,37 @@
 {
   "project_info": {
-    "project_number": "321780221140",
-    "project_id": "suitcaseapp-16ebd",
-    "storage_bucket": "suitcaseapp-16ebd.appspot.com"
+    "project_number": "253108101448",
+    "firebase_url": "https://circuit-c3cde-default-rtdb.firebaseio.com",
+    "project_id": "circuit-c3cde",
+    "storage_bucket": "circuit-c3cde.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:321780221140:android:a48f18c177f1f9300fa741",
+        "mobilesdk_app_id": "1:253108101448:android:b97ee51c51d144d985d37d",
         "android_client_info": {
           "package_name": "com.example.suit_case_application"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "253108101448-215ae0nsohctjssv18pqn9ph954d0b40.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyAb0BKDLcnb6Eb5TKgR3axnYB4__E6FIgU"
+          "current_key": "AIzaSyBOI-f5Ctp1RAWtURXq-o1wvaHgSMn7VLo"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "253108101448-215ae0nsohctjssv18pqn9ph954d0b40.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
