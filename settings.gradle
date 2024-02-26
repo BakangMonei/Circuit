@@ -13,5 +13,5 @@ dependencyResolutionManagement {
         maven { url "https://jitpack.io" }
     }
 }
-rootProject.name = "Suit_Case_Application"
+rootProject.name = "CircuitAppPhatsimo"
 include ':app'
