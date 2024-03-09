@@ -46,7 +46,7 @@
                     android:layout_width="200dp"
                     android:layout_height="160dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/logo" />
+                    android:src="@drawable/splash_original" />
 
                 <TextView
                 android:layout_width="match_parent"

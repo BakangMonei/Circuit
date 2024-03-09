@@ -66,7 +66,6 @@ public class Register extends AppCompatActivity {
                 String txtFullName = names.getText().toString();
                 String txtEmail = emailAddress.getText().toString().trim();
                 String txtPassword = password.getText().toString();
-
                 if(TextUtils.isEmpty(txtUsername) || (TextUtils.isEmpty(txtFullName))
                         || (TextUtils.isEmpty(txtEmail)) || (TextUtils.isEmpty(txtPassword))
                 ){
@@ -78,12 +77,9 @@ public class Register extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     private void registerUser(String username, String fullName, String email, String password) {
-
-
         firebaseAuth.createUserWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
@@ -93,14 +89,11 @@ public class Register extends AppCompatActivity {
                 map.put("username",username);
                 map.put("id",firebaseAuth.getCurrentUser().getUid());
                 map.put("profileimageurl","default");
-
                 mRootRef.child("Users").child(firebaseAuth.getCurrentUser().getUid()).setValue(map)
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()){
-
-
                                     Intent intent= new Intent(getApplicationContext(), Login.class);
                                     startActivity(intent);
                                     finish();
@@ -113,7 +106,6 @@ public class Register extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(getApplicationContext(),e.getMessage().toString(),
                         Toast.LENGTH_LONG).show();
-
             }
         });
 

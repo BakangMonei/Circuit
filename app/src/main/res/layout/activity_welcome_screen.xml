@@ -27,7 +27,7 @@
             android:textSize="40sp" />
         <com.github.ybq.android.spinkit.SpinKitView
             android:id="@+id/spin_kit"
-            style="@style/SpinKitView.FoldingCube"
+            style="@style/SpinKitView.DoubleBounce"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:SpinKit_Color="#cdba7e" />

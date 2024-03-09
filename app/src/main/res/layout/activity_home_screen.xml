@@ -31,7 +31,7 @@
             android:id="@+id/welcomeText2"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Below is a list of pending suitcase items"
+            android:text="Below is a list of pending circuit items"
             android:textColor="#afb2bb"
             android:paddingLeft="20dp"
             android:fontFamily="@font/nunitoregular"
@@ -85,11 +85,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_no_data"
             android:layout_marginTop="0dp"
-            android:textAlignment="center"
-            android:textSize="20dp"
-            android:textColor="#bbbbbb"
             android:gravity="center_horizontal"
             android:text="No Entries ,Create/ add item"
+            android:textAlignment="center"
+            android:textColor="#bbbbbb"
+            android:textSize="20dp"
             android:visibility="invisible" />
 
         <androidx.recyclerview.widget.RecyclerView

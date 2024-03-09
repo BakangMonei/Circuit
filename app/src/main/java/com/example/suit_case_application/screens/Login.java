@@ -66,12 +66,10 @@ public class Login extends AppCompatActivity {
     }
 
     private void loginUser(String email, String password) {
-
         firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-
                     Toast.makeText(Login.this,"Login Success",
                             Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(getApplicationContext(),HomeScreen.class);

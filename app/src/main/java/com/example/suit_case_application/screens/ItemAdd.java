@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.example.suit_case_application.R;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -52,7 +53,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 public class ItemAdd extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUST = 1;
     TextView address;
-    EditText itmName,itmPrice, itmDescription, dateText, productPrice1;
+    EditText itmName, itmPrice, itmDescription, dateText, productPrice1;
     Button postButton;
     ImageView itmImage, image_One;
     FirebaseUser firebaseUser;
@@ -86,9 +87,9 @@ public class ItemAdd extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("Items").child(mAuth.getCurrentUser().getUid());
         storageReference = FirebaseStorage.getInstance().getReference("Items").child(mAuth.getCurrentUser().getUid());
         //initialisation of widgets
-       itmImage = findViewById(R.id.entryImage1);
+        itmImage = findViewById(R.id.entryImage1);
         address = findViewById(R.id.location);
-       itmName = findViewById(R.id.entryName);
+        itmName = findViewById(R.id.entryName);
         itmPrice = findViewById(R.id.entryPrice);
         itmDescription = findViewById(R.id.entryDescription);
         address.setText(itmaddress);
@@ -104,19 +105,19 @@ public class ItemAdd extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Still Uploading wait a sec", Toast.LENGTH_SHORT).show();
 
                 } else {
-                    postToDatabase(productlat, productlon,address);
+                    postToDatabase(productlat, productlon, address);
                 }
             }
         });
 
         //can tap on the image
-       itmImage.setOnClickListener(new View.OnClickListener() {
+        itmImage.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)  {
+            public void onClick(View v) {
                 ImagePicker.with(ItemAdd.this)
-                        .crop()	    			//Crop image(Optional), Check Customization for more option
-                        .compress(1024)			//Final image size will be less than 1 MB(Optional)
-                        .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
+                        .crop()                    //Crop image(Optional), Check Customization for more option
+                        .compress(1024)            //Final image size will be less than 1 MB(Optional)
+                        .maxResultSize(1080, 1080)    //Final image resolution will be less than 1080 x 1080(Optional)
                         .start();
             }
         });
@@ -165,14 +166,12 @@ public class ItemAdd extends AppCompatActivity {
 
     }
 
-    private void postToDatabase(String productlat, String productlon,String address) {
+    private void postToDatabase(String productlat, String productlon, String address) {
         String latitude = productlat;
         String longitude = productlon;
         String entryaddress = address;
-
         if (imageUri != null) {
             final StorageReference store = storageReference.child(System.currentTimeMillis() + "." + getFileExtenstion(imageUri));
-
             uploadTask = store.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
@@ -183,13 +182,10 @@ public class ItemAdd extends AppCompatActivity {
                             double lat = Double.parseDouble(latitude.trim());
                             double lon = Double.parseDouble(longitude.trim());
                             String uniquekey = databaseReference.push().getKey();
-                            String entryDate = date;
-                            String entryAddress = entryaddress;
+                            String entryDate = date; String entryAddress = entryaddress;
                             String entryname = itmName.getText().toString().trim();
                             String entryprice = itmPrice.getText().toString().trim();
                             String entrydescription = itmDescription.getText().toString().trim();
-
-
                             HashMap<String, Object> map = new HashMap<>();
                             map.put("itemId", uniquekey);
                             map.put("itemLatitude", lat);
@@ -200,7 +196,6 @@ public class ItemAdd extends AppCompatActivity {
                             map.put("itemImage", entryImage);
                             map.put("itemName", entryname);
                             map.put("itemPrice", entryprice);
-
 
                             databaseReference.child(uniquekey).setValue(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
@@ -228,7 +223,7 @@ public class ItemAdd extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         imageUri = data.getData();
-       itmImage.setImageURI(imageUri);
+        itmImage.setImageURI(imageUri);
 
     }
 }
